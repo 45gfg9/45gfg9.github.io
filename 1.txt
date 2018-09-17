@@ -1,0 +1,1 @@
+Hi! this is a txt file named "1.txt". If you see this, means it is quoted by HTML file. And if this split into multi line, then means it is quoted by <iframe> tag.
