@@ -8,9 +8,9 @@
 	<body>
 		hoi 
 		<%
-			response.write(request.querystring("firstname"))
+			response.write(request.post("firstname"))
 			
-			response.write("  "+request.querystring("lastname"))
+			response.write("  "+request.post("lastname"))
 		%>
 	</body>
 </html>
