@@ -1,14 +1,23 @@
 <!doctype html>
 <html>
+	<script>
+		function submittoonlydiv(){
+			hellostr='Hello '
+			hellostr+=document.getElementById('fname').value
+			hellostr+=' '
+			hellostr+=document.getElementById('lname').value
+			document.getElementById('theonlydivthathasnamehere').innerHTML='<h1>'+hellostr+"</h1>"
+		}
+	</script>
 	<head>
 		<meta charset="UTF-8">
 		<title>CLOSE NOW? or whatever you like</title>
 	</head>
-	<body>
-		<div align="center" style="color: turquoise">
+	<body bgcolor="lightgray">
+		<div align="center" style="color: #805121">
 			<img src="45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="HOW CAN YOU SEE THIS">
 		
-			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">No descriptions given and nothing here. </h1>
+			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">45gfg9</h1>
 			<input type="text" id="input1" placeholder="type something!! PLEASE">
 			<input name="thats" type="submit" id="submit1" value="CLICK ME" onclick="alert('pure test lol and u typed '+document.getElementById('input1').value)">
 		</div>
@@ -18,15 +27,19 @@
 		<h4 onclick="location.href='Of.html'">Of</h4>
 		<h5>Internet</h5>
 		<h6>(just kidding)</h6>
-		<div>
-			<form method="post" action="sub.asp">
-				First name: <br>
-				<input type="text" name="firstname">
-				<br>
-				Last name: <br>
-				<input type="text" name="lastname">
-				<input type="submit" value="up">
-			</form>
+		<div style="background-color: lightblue">
+<!--			<form method="post" action="sub.asp">-->
+			First name: <br>
+			<input type="text" name="firstname" id="fname">
+			<br>
+			Last name: <br>
+			<input type="text" name="lastname" id="lname">
+			<input type="button" value="DONT CLICK ME" onClick="submittoonlydiv()">
+<!--			</form>-->
+		</div>
+		<div style="background-color: azure;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" id="theonlydivthathasnamehere"></div>
+		<div style="color: white;background-color: black;font-size: 30px">
+			Here a info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
 		</div>
 	</body>
 </html>
