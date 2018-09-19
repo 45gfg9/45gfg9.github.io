@@ -1,12 +1,22 @@
 <!doctype html>
 <html>
-	<script>
+	<script type="text/javascript">
 		function submittoonlydiv(){
-			hellostr='Hello '
-			hellostr+=document.getElementById('fname').value
-			hellostr+=' '
-			hellostr+=document.getElementById('lname').value
-			document.getElementById('theonlydivthathasnamehere').innerHTML='<h1>'+hellostr+"</h1>"
+			document.getElementById('thedivspotforshowingname').innerHTML=
+				'Hello, '+document.getElementById('fname').value+' '+document.getElementById('lname').value;
+		}
+		function alertthemwhattheytyped(){
+			console.log('Hohoho');
+			alert(document.getElementById('input1').value);
+		}
+		function seconddivonclick(){
+			document.getElementById('theseconddivinthispage').align='center';
+			document.getElementById('theseconddivinthispage').innerHTML='why u click me?';
+			document.getElementById('theseconddivinthispage').onclick='seconddivclickagain()';
+		}
+		function seconddivclickagain(){
+			document.getElementById('theseconddivinthispage').align='right';
+			document.getElementById('theseconddivinthispage').innerHTML='again?!';
 		}
 	</script>
 	<head>
@@ -14,9 +24,8 @@
 		<title>CLOSE NOW? or whatever you like</title>
 	</head>
 	<body bgcolor="lightgray">
-		<div align="center" style="color: #805121">
+		<div align="center" style="color:#805121">
 			<img src="45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="HOW CAN YOU SEE THIS">
-		
 			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">45gfg9</h1>
 			<input type="text" id="input1" placeholder="type something!! PLEASE">
 			<input name="thats" type="submit" id="submit1" value="CLICK ME" onclick="alert('pure test lol and u typed '+document.getElementById('input1').value)">
@@ -25,21 +34,19 @@
 		<h2 onclick="window.location.href='Next.html'">Next</h2>
 		<h3><a href="Generation.html">Generation</a></h3>
 		<h4 onclick="location.href='Of.html'">Of</h4>
-		<h5>Internet</h5>
-		<h6>(just kidding)</h6>
-		<div style="background-color: lightblue">
-<!--			<form method="post" action="sub.asp">-->
+		<h5 onClick="location.href='Internet.html'">Internet</h5>
+		<h6 onClick="document.write('<h1 onclick=\'location.reload()\'>You win!</h1>')">(just kidding)</h6>
+		<div style="background-color:lightblue">
 			First name: <br>
-			<input type="text" name="firstname" id="fname">
-			<br>
+			<input type="text" name="firstname" id="fname"><br>
 			Last name: <br>
-			<input type="text" name="lastname" id="lname">
+			<input type="text" name="lastname" id="lname"><br>
 			<input type="button" value="DONT CLICK ME" onClick="submittoonlydiv()">
-<!--			</form>-->
 		</div>
-		<div style="background-color: azure;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" id="theonlydivthathasnamehere"></div>
-		<div style="color: white;background-color: black;font-size: 30px">
-			Here a info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
+		<div style="background-color: azure;font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'" id="thedivspotforshowingname"></div>
+		<br>
+		<div style="color:white; background-color:black; font-size:30px" id="theseconddivinthispage" onClick="seconddivonclick()" align="left">
+			Here's an info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
 		</div>
 	</body>
 </html>
