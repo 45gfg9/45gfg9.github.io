@@ -1,0 +1,16 @@
+.forfutureuse{
+	color: azure;
+	background-color: black;
+	font-size: 30px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+.alternateform{
+	background-color: lightblue;
+	color: darkred;
+}
+.namediv{
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 40px;
+	color: magenta;
+	background-color: azure;
+}

@@ -1,42 +1,7 @@
 <!doctype html>
 <html>
-	<script type="text/javascript">
-		function submittoonlydiv(){
-			document.getElementById('thedivspotforshowingname').innerHTML=
-				'Hello, '+document.getElementById('fname').value+' '+document.getElementById('lname').value;
-		}
-		function alertthemwhattheytyped(){
-			console.log('Hohoho');
-			alert(document.getElementById('input1').value);
-		}
-		function seconddivonclick(){
-			document.getElementById('theseconddivinthispage').align='center';
-			document.getElementById('theseconddivinthispage').innerHTML='why u click me?';
-			document.getElementById('theseconddivinthispage').onclick='seconddivclickagain()';
-		}
-		function seconddivclickagain(){
-			document.getElementById('theseconddivinthispage').align='right';
-			document.getElementById('theseconddivinthispage').innerHTML='again?!';
-		}
-	</script>
-	<style type="text/css">
-		.forfutureuse{
-			color: azure;
-			background-color: black;
-			font-size: 30px;
-			font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
-		}
-		.alternateform{
-			background-color: lightblue;
-			color: darkred;
-		}
-		.namediv{
-			font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-			font-size: 40px;
-			color: magenta;
-			background-color: azure;
-		}
-	</style>
+	<script type="text/javascript" src="js/eastereggsfunctions.js"></script>
+	<link rel="stylesheet" href="csses/classesstyles.css">
 	<head>
 		<meta charset="UTF-8">
 		<title>CLOSE NOW? or whatever you like</title>
