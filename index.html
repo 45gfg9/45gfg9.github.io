@@ -24,12 +24,20 @@
 			<input type="text" name="firstname" id="fname"><br>
 			Last name: <br>
 			<input type="text" name="lastname" id="lname"><br>
-			<input type="button" value="DONT CLICK ME" onClick="submittoonlydiv()">
+			<input type="submit" value="DONT CLICK ME" onClick="submittoonlydiv()">
 		</div>
 		<div class="namediv" id="thedivspotforshowingname"></div>
 		<br>
 		<div class="forfutureuse" id="theseconddivinthispage" onClick="seconddivonclick()" align="left">
 			Here's an info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
+		</div>
+		<br>
+		<div class="arealform">
+			<form action="phps/post.php" method="post">
+				Name: <input type="text" name="name"><br>
+				E-mail: <input type="text" name="email"><br>
+				<input type="submit" value="Submit">
+			</form>
 		</div>
 	</body>
 </html>
