@@ -12,12 +12,10 @@ body {
 	font-size: 50px;
 	width: 350px;
 	height: 75px;
-	vertical-align: middle;
 }
 
-#submitcode {
+#sub {
 	width: 200px;
 	height: 100px;
-	
 	font-size: 30px;
 }
