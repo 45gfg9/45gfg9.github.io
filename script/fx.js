@@ -1,4 +1,12 @@
 // JavaScript Document
+$('#box').bind('keypress',function(e){
+	if(e.keyCode == "13") {
+		logbox();
+	}
+});
+function logbox() {
+	console.log($('#box').val());
+}
 
 function convert() {
 	var in_s=$("#in").val();
