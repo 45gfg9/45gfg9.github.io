@@ -3,7 +3,6 @@
 function convert() {
 	var in_s=$("#in").val();
 	if (in_s == '') { 
-    	alert('请输入Native字符串'); 
     	return; 
 	}
 	$("#out").val('');

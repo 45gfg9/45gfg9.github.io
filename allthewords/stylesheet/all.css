@@ -8,6 +8,10 @@ body {
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
+textarea {
+	font-size: 15px;
+}
+
 #box {
 	font-size: 50px;
 	width: 350px;
