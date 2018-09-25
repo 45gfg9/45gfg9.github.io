@@ -4,7 +4,7 @@
 	font-size: 30px;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
-.alternateform{
+#fakeform{
 	background-color: lightblue;
 	color: darkred;
 }
