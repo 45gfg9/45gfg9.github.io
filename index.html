@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
-	<script type="text/javascript" src="js/eastereggsfunctions.js"></script>
-	<link rel="stylesheet" href="csses/classesstyles.css">
 	<head>
 		<meta charset="UTF-8">
 		<title>CLOSE NOW? or whatever you like</title>
+		<script type="text/javascript" src="script/all.js"></script>
+		<link rel="stylesheet" href="stylesheet/all.css">
 	</head>
 	<body bgcolor="lightgray">
 		<div align="center" style="color:#805121">
 			<img src="pics/45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="HOW CAN YOU SEE THIS">
 			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">45gfg9</h1>
 			<input type="text" id="input1" placeholder="type something!! PLEASE">
-			<input name="thats" type="submit" id="submit1" value="CLICK ME" onclick="console.log('why u are even checking things here? ');alert('pure test lol and u typed '+document.getElementById('input1').value)">
+			<input name="thats" type="submit" id="submit1" value="CLICK ME" onclick="console.log('why u are even checking things here?');alert('pure test lol and u typed '+document.getElementById('input1').value)">
 		</div>
 		<hr>
 		<h2 onclick="window.location.href='Next.html'">Next</h2>
@@ -28,16 +28,8 @@
 		</div>
 		<div class="namediv" id="thedivspotforshowingname"></div>
 		<br>
-		<div class="forfutureuse" id="theseconddivinthispage" onClick="seconddivonclick()" align="left">
+		<div id="theseconddivinthispage" onClick="seconddivonclick()" align="left">
 			Here's an info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
-		</div>
-		<br>
-		<div class="arealform">
-			<form action="phps/post.php" method="post">
-				Name: <input type="text" name="name"><br>
-				E-mail: <input type="text" name="email"><br>
-				<input type="submit" value="Submit">
-			</form>
 		</div>
 	</body>
 </html>
