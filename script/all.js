@@ -1,6 +1,6 @@
 // JavaScript Document
 function submittoonlydiv(){
-	document.getElementById('thedivspotforshowingname').innerHTML=
+	document.getElementById('namediv').innerHTML=
 		'Hello, '+document.getElementById('fname').value+' '+document.getElementById('lname').value;
 }
 function alertthemwhattheytyped(){
