@@ -1,14 +1,14 @@
-#theseconddivinthispage{
+#theseconddivinthispage {
 	color: azure;
 	background-color: black;
 	font-size: 30px;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
-#fakeform{
+#fakeform {
 	background-color: lightblue;
 	color: darkred;
 }
-.namediv{
+#namediv {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 40px;
 	color: magenta;
