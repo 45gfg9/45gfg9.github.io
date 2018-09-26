@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<title>ENTER CODE</title>
+	</head>
+
+	<body>
+		ENTER CODE<br>
+		<input type="text" id="code" align="middle"><br>
+		<input type="submit" id="sub" value="Submit" onclick="heart()">
+		<div id="heart" hidden></div>
+	</body>
+	
+	<script>
+		$('#code').bind('keypress',function(e){
+			if(e.keyCode == "13") {
+				heart($('#code').val());
+			}
+		});
+	</script>
+	<script src="script/heart.js"></script>
+	<link rel="stylesheet" href="stylesheet/heart.css">
+</html>
