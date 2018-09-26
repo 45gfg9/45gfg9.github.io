@@ -11,8 +11,8 @@
 		<div align="center" style="color:#805121">
 			<img src="pics/45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="HOW CAN YOU SEE THIS">
 			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">45gfg9</h1>
-			<input type="text" id="input1" placeholder="type something!! PLEASE">
-			<input name="thats" type="submit" id="submit1" value="CLICK ME" onclick="console.log('why u are even checking things here?');alert('pure test lol and u typed '+document.getElementById('input1').value)">
+			<input type="text" id="input1" placeholder="type something">
+			<input type="submit" id="submit1" value="CLICK ME" onclick="console.log('why u are even checking things here?');alert('pure test lol and u typed '+$('#input1').val())">
 		</div>
 		<hr>
 		<h2 onclick="window.location.href='Next'">Next</h2>
@@ -25,11 +25,11 @@
 			<input type="text" id="fname"><br>
 			Last name: <br>
 			<input type="text" id="lname"><br>
-			<input type="submit" value="DONT CLICK ME" onClick="submittoonlydiv()">
+			<input type="submit" value="DONT CLICK ME" onClick="submittonamediv()">
 		</div>
 		<div id="namediv"></div>
 		<br>
-		<div id="theseconddivinthispage" onClick="seconddivonclick()" align="left">
+		<div id="theseconddivinthispage" onClick="seconddivonclick()" align="middle">
 			Here's an info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
 		</div>
 	</body>

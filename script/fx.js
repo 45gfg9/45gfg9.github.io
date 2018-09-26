@@ -11,5 +11,13 @@ function convertto() {
 }
 
 function convertfrom() {
-	$('#in').html($('#out').val());
+	var code = $("#out").val().match(/&#(\d+);/g);
+	if (code == null) { 
+    	$('#in').val('请输入正确的Unicode代码！');
+		$("#out").focus();
+    	return; 
+	}
+	$("#in").val('');
+	for (var i=0; i<code.length; i++)
+		$("#in").val($("#in").val() + String.fromCharCode(code[i].replace(/[&#;]/g, '')));
 }

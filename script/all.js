@@ -1,18 +1,11 @@
 // JavaScript Document
-function submittoonlydiv(){
-	document.getElementById('namediv').innerHTML=
-		'Hello, '+document.getElementById('fname').value+' '+document.getElementById('lname').value;
+function submittonamediv(){
+	$('#namediv').text('Hello, '+$('#fname').val()+' '+$('#lname').val());
 }
 function alertthemwhattheytyped(){
 	console.log('Hohoho');
-	alert(document.getElementById('input1').value);
+	alert($('#input1').val);
 }
 function seconddivonclick(){
-	document.getElementById('theseconddivinthispage').align='center';
-	document.getElementById('theseconddivinthispage').innerHTML='why u click me?';
-	document.getElementById('theseconddivinthispage').onclick='seconddivclickagain()';
-}
-function seconddivclickagain(){
-	document.getElementById('theseconddivinthispage').align='right';
-	document.getElementById('theseconddivinthispage').innerHTML='again?!';
+	$('#theseconddivinthispage').text('why u click me?');
 }

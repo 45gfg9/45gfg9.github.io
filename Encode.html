@@ -2,6 +2,24 @@
 <html>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="script/fx.js"></script>
+	<style>
+		body {
+			text-align: center;
+			vertical-align: middle;
+			valign: middle;
+			background-color: #444444;
+			color: white;
+			font-size: 3rem;
+		}
+
+		textarea {
+			font-size: 15px;
+		}
+		
+		.convert {
+			font-size: 20px;
+		}
+	</style>
 	<link rel="stylesheet" href="stylesheet/heart.css">
 	<head>
 		<meta charset="UTF-8">
@@ -13,7 +31,7 @@
 		<hr>
 		<textarea id="out"></textarea>
 		<hr>
-		<input type="button" class="convert" value="Convert to" onClick="convertto()"> <br>
-		<input type="button" class="convert" value="Convert from" onClick="convertfrom()">
+		<input type="button" class="convert" value="Convert To" onClick="convertto()"> <br>
+		<input type="button" class="convert" value="Convert From" onClick="convertfrom()">
 	</body>
 </html>

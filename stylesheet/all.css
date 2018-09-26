@@ -1,7 +1,7 @@
 #theseconddivinthispage {
 	color: azure;
 	background-color: black;
-	font-size: 30px;
+	font-size: 2rem;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 #fakeform {
@@ -10,7 +10,7 @@
 }
 #namediv {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	font-size: 40px;
+	font-size: 3rem;
 	color: magenta;
 	background-color: azure;
 }
