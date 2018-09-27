@@ -1,5 +1,5 @@
-for i in $(seq 36)
+for i in $(seq 1401 1436)
 do
-	var=$(openssl sha512<<<$i)
-	echo $i : ${var:8:8} >> CodeMap
+	var=$(openssl gost-mac<<<$i)
+	echo $i : $var
 done

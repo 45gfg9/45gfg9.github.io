@@ -1,0 +1,24 @@
+/* CSS Document */
+
+body {
+	background-color: gray;
+	color: white;
+}
+
+div {
+	text-align: center;
+	border: 1px solid black;
+	margin: 5px;
+}
+
+#px {
+	background-color: darkolivegreen;
+}
+
+#em {
+	background-color: darkcyan;
+}
+
+#rem {
+	background-color: darkgoldenrod
+}

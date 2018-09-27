@@ -10,12 +10,22 @@
 	<body>
 		ENTER CODE<br>
 		<input type="text" id="code" align="middle"><br>
-		<input type="submit" id="sub" value="Submit" onclick="heart()">
+		<input type="submit" id="sub" value="Submit" onclick="heart($('#code').val());">
 		<div id="heart" hidden></div>
 	</body>
 	
 	<script>
-		$('#code').bind('keypress',function(e){
+		String.prototype.equalsIgnoreCase = function(anotherString) {
+            if(this === anotherString){
+                return true;
+            }
+            if(typeof(anotherString)==='string'){
+                return this.toLowerCase() == anotherString.toLowerCase();
+            }
+            return false;
+        }
+
+		$('#code').on('keypress',function(e){
 			if(e.keyCode == "13") {
 				heart($('#code').val());
 			}

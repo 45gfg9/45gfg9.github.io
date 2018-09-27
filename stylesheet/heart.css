@@ -4,7 +4,7 @@ body {
 	text-align: center;
 	vertical-align: middle;
 	valign: middle;
-	background-color: #444444;
+	background-color: gray;
 	color: white;
 	font-size: 3rem;
 }
@@ -21,7 +21,7 @@ body {
 
 #heart {
 	font-size: 1.5rem;
-	border: 10px solid gray;
+	border: 10px solid darkgray;
 	background-color: lightblue;
 	color: indigo;
 	text-align: left;
