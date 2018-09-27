@@ -14,23 +14,6 @@
 		<div id="heart" hidden></div>
 	</body>
 	
-	<script>
-		String.prototype.equalsIgnoreCase = function(anotherString) {
-            if(this === anotherString){
-                return true;
-            }
-            if(typeof(anotherString)==='string'){
-                return this.toLowerCase() == anotherString.toLowerCase();
-            }
-            return false;
-        }
-
-		$('#code').on('keypress',function(e){
-			if(e.keyCode == "13") {
-				heart($('#code').val());
-			}
-		});
-	</script>
 	<script src="script/heart.js"></script>
 	<link rel="stylesheet" href="stylesheet/heart.css">
 </html>

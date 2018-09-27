@@ -12,9 +12,7 @@ function convertto() {
 
 function convertfrom() {
 	var code = $("#out").val().match(/&#(\d+);/g);
-	if (code == null) { 
-    	$('#in').val('请输入正确的Unicode代码！');
-		$("#out").focus();
+	if (code == null) {
     	return; 
 	}
 	$("#in").val('');
