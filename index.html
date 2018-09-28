@@ -10,7 +10,7 @@
 	</head>
 	<body bgcolor="lightgray">
 		<div align="center" style="color:#805121">
-			<img src="pics/45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="45gfg9" width="20%">
+			<img src="pics/45gfg9.png" onclick="location.href='https://45gfg9.github.io'" alt="45gfg9" width="50%">
 			<h1 onclick="window.open('https://45gfg9.github.io')" align="center">45gfg9</h1>
 			<input type="text" id="input1" placeholder="type something">
 			<input type="submit" id="submit1" value="CLICK ME" onclick="console.log('why u are even checking things here?');alert('pure test lol and u typed '+$('#input1').val())">
@@ -26,11 +26,11 @@
 			<input type="text" id="fname"><br>
 			Last name: <br>
 			<input type="text" id="lname"><br>
-			<input type="submit" åonClick="submittonamediv()" value="DONT CLICK ME">
+			<input type="submit" onClick="submittonamediv()" value="DONT CLICK ME">
 		</div>
 		<div id="namediv"></div>
 		<br>
-		<div id="theseconddivinthispage" onClick="seconddivonclick()" align="middle">
+		<div id="theseconddivinthispage" onClick="seconddivonclick();console.log('hey!')" align="middle">
 			Here's an info spot for future use. &lt;div&gt; id: 'theseconddivinthispage'
 		</div>
 	</body>

@@ -12,11 +12,12 @@ String.prototype.equalsIgnoreCase = function(anotherString) {
 
 $('#code').on('keypress',function(e){
 	if(e.keyCode == "13") {
-		heart($('#code').val());
+		heart();
 	}
 });
 
-function heart(code) {
+function heart() {
+	var code=$('#code').val();
 	var text;
 	var obj=$('#heart');
 	if(code.length<8)text='&#22079;&#65292;&#20320;&#27809;&#25171;&#22815;&#23383;&#25968;&#12290;';
@@ -27,4 +28,5 @@ function heart(code) {
 	else text='&#69;&#109;&#109;&#46;&#46;&#46;&#20320;&#30830;&#23450;&#20320;&#25171;&#23545;&#20102;&#21527;&#65311;';
 	obj.html(text);
 	obj.show();
+	$('#code').val('');
 }
