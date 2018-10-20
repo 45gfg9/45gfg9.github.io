@@ -1,0 +1,21 @@
+/* CSS Document */
+
+body {
+	text-align: center;
+	vertical-align: middle;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
+	background-color: black;
+	color: white;
+	font-size: 3rem;
+	border: 20px solid red;
+}
+
+#e1 {
+	font-size: 3rem;
+/*	width: 30rem;*/
+	height: 5rem;
+}
+
+#e2 {
+	font-size: 2rem;
+}

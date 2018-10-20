@@ -1,5 +1,4 @@
 for i in $(seq 1401 1436)
 do
-	var=$(openssl gost-mac<<<$i)
-	echo $i : $var
+	echo $i : $(echo -n $i | openssl gost-mac)
 done
