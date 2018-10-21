@@ -6,16 +6,15 @@ body {
 	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", "sans-serif";
 	background-color: black;
 	color: white;
-	font-size: 3vw;
-	border: 20px solid red;
+	font-size: 5vw;
+	border: 1vw solid red;
 }
 
 #e1 {
-	font-size: 3rem;
-/*	width: 30rem;*/
-	height: 5rem;
+	font-size: 3vw;
+	height: 5vw;
 }
 
 #e2 {
-	font-size: 2rem;
+	font-size: 2vw;
 }
