@@ -4,13 +4,16 @@ body {
 	text-align: center;
 	background-color: gray;
 	color: white;
-	font-size: 3rem;
+}
+
+div {
+	box-sizing: border-box;
 }
 
 #code {
-	font-size: 3rem;
-	width: 20rem;
-	height: 5rem;
+	font-size: 4vw;
+	width: 20%;
+	height: 5%;
 }
 
 #sub {
@@ -20,8 +23,7 @@ body {
 #oh {
 	background-color: darkgray;
 /*	padding: 10px;*/
-/*	height: 0px;*/
-/*	width: 0px;*/
+	height: 1px;
 }
 
 #heart {
