@@ -20,15 +20,16 @@ div {
 	font-size: 2rem;
 }
 
-#oh {
+#outerheart {
 	background-color: darkgray;
-/*	padding: 10px;*/
-	height: 1px;
+	/*padding: 10px;*/
+	height: 0px;
 }
 
-#heart {
+#innerheart {
 	font-size: 1.5rem;
-	padding: 10px;
+	/*padding: 10px;*/
+	/*border: 1vw solid red;*/
 	background-color: lightblue;
 	color: indigo;
 	text-align: left;

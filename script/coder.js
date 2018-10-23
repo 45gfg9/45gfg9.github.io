@@ -1,6 +1,6 @@
 // JavaScript Document
 
-function convertto() {
+function encode() {
 	var in_s=$("#in").val();
 	if (in_s == '') { 
     	return; 
@@ -10,7 +10,7 @@ function convertto() {
 		$("#out").val($("#out").val() + '&#' + in_s.charCodeAt(i) + ';');
 }
 
-function convertfrom() {
+function decode() {
 	var code = $("#out").val().match(/&#(\d+);/g);
 	if (code == null) {
     	return; 
