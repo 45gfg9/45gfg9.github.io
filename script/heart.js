@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var interval = 5000;
+var interval = 1000;
 
 $('#code').on('keypress', function(e) {
 	'use strict';
@@ -11,6 +11,9 @@ $('#code').on('keypress', function(e) {
 
 function heart() {
 	'use strict';
+	
+	$("#code").unbind();
+	$('#sub').attr('disabled', true);
 
 	var o = $('#outer');
 	var i = $('#inner');
@@ -46,15 +49,15 @@ function heart() {
 			}
 		}
 		o.animate({
-			height: '65vw'
+			height: '80%'
 		}, interval, 'swing', function() {
-			o.css('padding', '2vw');
+			o.css('padding', '1%');
 			i.animate({
 				height: '100%'
-			}, interval, 'linear', function() {
+			}, interval, 'swing', function() {
 				h.html(text);
 				h.show(interval);
-			})
+			});
 		});
 
 		$('#code').val('');
