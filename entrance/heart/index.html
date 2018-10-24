@@ -1,20 +1,21 @@
 <!doctype html>
-<html>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<link rel="stylesheet" href="../../stylesheet/heart.css">
+<html style="height: 100%">
 	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta charset="UTF-8">
 		<title>heart()</title>
 	</head>
 
-	<body>
-		<input type="text" id="code" align="middle"><br>
-		<input type="button" id="sub" value="Submit" onclick="heart();">
-		<div id="outerheart">
-			<div id="innerheart"></div>
+	<body style="height: 100%; text-align: center; background-color: gray; color: white;">
+		<input type="text" id="code" align="middle" style="font-size: 400%;width: 25%;"><br>
+		<input type="button" id="sub" value="Submit" onclick="heart();" style="font-size: 2rem;">
+		<div id="outer" style="background-color: darkgray;">
+			<div id="inner" style="font-size: 1.5rem; background-color: lightblue; color: indigo; text-align: left; height: 0px">
+				<div id="heart" hidden></div>
+			</div>
 		</div>
 	</body>
-	<script src="../../script/heart.js"></script>
 	<script src="../../script/md5.js"></script>
+	<script src="../../script/heart.js"></script>
 </html>

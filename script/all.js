@@ -1,4 +1,5 @@
 // JavaScript Document
+
 function submittonamediv(){
 	$('#namediv').text('Hello, '+$('#fname').val()+' '+$('#lname').val());
 }
