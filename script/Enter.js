@@ -10,5 +10,5 @@ function Enter(){
 	md5=hex_md5($('#e1').val());
 	if(md5=='d41d8cd98f00b204e9800998ecf8427e')return;
 	if(md5=='1a663893e46bacd81483faf0ec893451')location.href='heart';
-	else $('#e1').val('Nope');
+	$('#e1').val('Nope');
 }
