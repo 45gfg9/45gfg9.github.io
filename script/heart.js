@@ -18,7 +18,7 @@ function heart() {
 	var o = $('#outer');
 	var i = $('#inner');
 	var h = $('#heart');
-	var code = $('#code').val().toLowerCase;
+	var code = $('#code').val().toLowerCase();
 	var text;
 	
 	if (code.length !== 0) {
