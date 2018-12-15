@@ -1,8 +1,8 @@
 # 45gfg9.github.io
 
 Hi! This is a site where I put all the ideas and some experimental stuff. 
-I just want to record something down, so you may find other things than HTML JS or CSS here. 
-And also for a place to send private messages on around 2019.6.28 :)
+I just want to record something, so you may find other things than HTML JS CSS here. 
+And also for a place to send some private messages to 36 people o orn around 2019.6.28 :)
 Using IDE: Dreamweaver, Sublime Text. lol
 
 Send me emails! You can reach me at:
