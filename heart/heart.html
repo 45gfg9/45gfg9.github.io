@@ -1,24 +1,24 @@
 <!doctype html>
-<html style="height: 100%">
+<html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="../script/md5.min.js"></script>
+		<script src="../script/heart.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta charset="UTF-8">
 		<title>heart()</title>
 	</head>
 
-	<body style="height: 100%; text-align: center; background-color: gray;">
-		<input type="text" id="code" align="middle" style="font-size: 400%; width: 25%;" onkeyup="this.value=this.value.replace(/[^0-9a-f]/i,'')"><br>
+	<body style="text-align: center; background-color: gray;">
+		<input type="text" id="code" align="middle" style="font-size: 5rem; width: 25rem; text-align: center" onkeyup="this.value=this.value.replace(/[^0-9a-f]/i,'')"><br>
 		<input type="button" id="sub" value="Submit" onclick="heart();" style="font-size: 100%;"><hr>
 		<div id="outer" style="background-color: darkgray;">
 			<div id="inner" style="background-color: lightblue;">
-				<div id="heart" style="font-size: 1.5rem; color: indigo; text-align: left; font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace'" hidden></div>
+				<div id="heart" style="font-size: 1rem; color: indigo; text-align: left; font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', Monaco, 'Courier New', 'monospace'" hidden></div>
 			</div>
 		</div><hr>
 		<div style="text-align: left; color: white; font-size: 150%; height: 0px">
 			<p>Remove all comments marked "causeLeak" in heart.js when done. </p>
 		</div>
 	</body>
-	<script src="../script/md5.js"></script>
-	<script src="../script/heart.js"></script>
 </html>

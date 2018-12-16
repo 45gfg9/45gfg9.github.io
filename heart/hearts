@@ -2,5 +2,6 @@
 for i in $(seq 1401 1436)
 do
 	s=$(echo -n $i | md5)
-	echo $i : ${s:0:8} : $(echo -n $s | md5)
+	s=${s:0:8}
+	echo $i : ${s} : $(echo -n $s | md5)
 done
