@@ -1,5 +1,3 @@
-var o = $('.kcxx p');
-o.text(parseInt(o.text().split(':')[1]));
 var s = false;
 var sid = setInterval(function(){
 	if(!isLogin()){
@@ -25,7 +23,7 @@ var sid = setInterval(function(){
 			courseId: 3002,
 			lessonId: 9837,
 			courseName: "AutoScript - G3T R3KT",
-			lessonTitle: o.text() + " - " + (parseInt(o.text()) + 80),
+			lessonTitle: "Length: 80 min",
 			startTimeString: Date.parse(new Date()) - 4805000,
 			isFinish: 1,
 		},
@@ -33,10 +31,7 @@ var sid = setInterval(function(){
 		dataType: "json",
 		async: false,
 		success: function(result) {
-			if(result.success){
-				o.text(parseInt(o.text()) + 80);
-			}
-			else{
+			if(!result.success){
 				console.error(result.message);
 			}
 		}
@@ -46,6 +41,6 @@ var sid = setInterval(function(){
 		console.warn("Stopped.")
 		return;
 	}
-	console.log("from = " + o.text() + ", to = " + (parseInt(o.text()) + 80) + "\nExpect " + (new Date()).toTimeString().substring(0, 8) + " to " + (new Date(Date.parse(new Date()) + 4845000)).toTimeString().substring(0, 8));
+	console.log("Expect " + (new Date()).toTimeString().substring(0, 8) + " to " + (new Date(Date.parse(new Date()) + 4845000)).toTimeString().substring(0, 8));
 }, 4845000);
 console.clear();
