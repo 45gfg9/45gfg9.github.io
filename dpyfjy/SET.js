@@ -5,7 +5,7 @@ $.ajax({
 	data:{
 		"account":"Use your account to replace the content of this string.",
 		"password":"123456",
-		"ipForget":1,
+		"ipForget":0,
 	},
 	success:function(result){
 		if(result.success){
