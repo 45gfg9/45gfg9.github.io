@@ -158,7 +158,7 @@ function heart(){
 			i.animate({
 				height: '100%'
 			}, interval, 'swing', function() {
-				h.html(text);
+				h.html(b64d(text));
 				h.show(2 * interval);
 			});
 		});
