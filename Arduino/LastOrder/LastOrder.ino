@@ -16,10 +16,11 @@ const DateTime UPLOAD(__DATE__, __TIME__);
 DateTime target;
 DateTime currdt;
 
-int L_base, days, i;
-bool state, ts, powerOk = true;
+int L_base, i;
+double days;
+bool state, ts;
 byte ms = 0;
-String str;
+char str[32];
 
 void setup() {
   delay(2000);
@@ -43,10 +44,7 @@ void setup() {
 
   EEPROM.get(L_ADDR, L_base);
 
-  str.reserve(32);
-
   update();
-  S7.setDP(3, true);
 }
 
 void loop() {
@@ -59,7 +57,7 @@ void loop() {
   ts = getState();
   currdt = RTC.now();
 
-  if (!(ms || (target - currdt).totalseconds() % 86400)) {
+  if (!((10 * (target - currdt).totalseconds() + ms) % 8640)) {
     update();
 
     Serial.println(dt2string(currdt) + " N");
@@ -74,9 +72,9 @@ void loop() {
         break;
 
       case 'T':
-        str = Serial.readStringUntil('\n');
-        if (str.length() == 8) {
-          target = DateTime(str.toInt(), str.substring(3).toInt(), str.substring(6).toInt());
+        readStr();
+        if (strlen(str) == 17) {
+          target = DateTime(atoi(str), atoi(str + 3), atoi(str + 6), atoi(str + 9), atoi(str + 12), atoi(str + 15));
           EEPROM.put(T_ADDR, target);
           update();
         }
@@ -84,17 +82,14 @@ void loop() {
         break;
 
       case 'S':
-        str = "S:";   str += state;
-        str += " B:"; str += !digitalRead(B_PIN);
-        str += " L:"; str += analogRead(L_PIN);
+        snprintf_P(str, 32, PSTR("S:%u B:%u L:%u"), state, !digitalRead(B_PIN), analogRead(L_PIN));
         Serial.println(str);
         break;
 
       case 'N':
-        str = Serial.readStringUntil('\n');
-        if (str.length() == 17) {
-          RTC.adjust(DateTime(str.toInt(), str.substring(3).toInt(), str.substring(6).toInt(),
-                              str.substring(9).toInt(), str.substring(12).toInt(), str.substring(15).toInt()));
+        readStr();
+        if (strlen(str) == 17) {
+          RTC.adjust(DateTime(atoi(str), atoi(str + 3), atoi(str + 6), atoi(str + 9), atoi(str + 12), atoi(str + 15)));
           currdt = RTC.now();
           update();
         }
@@ -103,8 +98,15 @@ void loop() {
 
       case 'D':
         i = Serial.parseInt();
-        S7.show(Serial.readStringUntil('\n'));
-        delay(i);
+        readStr();
+        S7.show(str);
+        i += millis();
+        while (millis() < i) {
+          if (Serial.available() && Serial.read() == 'R') {
+            pinMode(R_PIN, OUTPUT);
+            digitalWrite(R_PIN, LOW);
+          }
+        }
         update();
         break;
 
@@ -124,8 +126,27 @@ void loop() {
   delay(100);
 }
 
+void readStr() {
+  byte ndx = 0;
+  char ch;
+
+  while (Serial.available()) {
+    ch = Serial.read();
+
+    if (ch != '\n' && ch != '\r') {
+      str[ndx] = ch;
+      ndx++;
+    }
+    else {
+      str[ndx] = '\0';
+      return;
+    }
+  }
+}
+
 void update() {
-  days = ceil((target - currdt).totalseconds() / 86400.0);
+  days = (((target - currdt).totalseconds() + .1 * ms) / 86400);
+
   state = false;
 }
 
@@ -134,9 +155,9 @@ bool getState() {
 }
 
 String dt2string(DateTime dt) {
-  char str[20];
+  char dtstr[20];
 
-  snprintf_P(str, 20, PSTR("%04u/%02u/%02u %02u:%02u:%02u"),
+  snprintf_P(dtstr, 20, PSTR("%04u/%02u/%02u %02u:%02u:%02u"),
              dt.year(), dt.month(), dt.day(), dt.hour(), dt.minute(), dt.second());
-  return str;
+  return dtstr;
 }
