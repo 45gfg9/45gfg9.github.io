@@ -127,7 +127,7 @@ void loop() {
 }
 
 void readStr() {
-  byte ndx = 0;
+  static byte ndx = 0;
   char ch;
 
   while (Serial.available()) {
@@ -139,6 +139,7 @@ void readStr() {
     }
     else {
       str[ndx] = '\0';
+	  ndx = 0;
       return;
     }
   }

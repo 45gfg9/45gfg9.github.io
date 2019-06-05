@@ -8,6 +8,8 @@
 // Using ATmega8A @ 16 MHz
 //
 // SPI's running at F_CPU / 8 for stability.
+//
+// For your situation, please look up datasheet.
 
 #define SPI_CLOCK   (F_CPU / 8)
 
@@ -36,7 +38,7 @@
 void pulse(int pin, int times);
 
 // Because we are always running with SPI_CLOCK > (F_CPU / 128)
-// so we force it to use hardware SPI
+// we force it to use hardware SPI
 #include "SPI.h"
 
 void setup() {
