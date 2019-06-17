@@ -8,6 +8,7 @@
 
 #define T_ADDR 0x00
 #define L_ADDR 0x10
+#define Y_ADDR 0xFF
 
 DS1302 RTC(8, 6, 7);
 Seg7 S7(2, 3, 4);
@@ -19,32 +20,41 @@ DateTime currdt;
 int L_base, i;
 double days;
 bool state, ts;
-byte ms = 0;
-char str[32];
+byte ms = 0, ndx = 0;
+char str[32], ctrl;
 
 void setup() {
   delay(2000);
-
   Serial.begin(9600);
-  pinMode(B_PIN, INPUT_PULLUP);
 
-  RTC.begin();
+  if (EEPROM.read(Y_ADDR)) {
+    RTC.begin();
 
-  if (RTC.now() < UPLOAD) {
-    RTC.adjust(UPLOAD);
+    if (RTC.now() < UPLOAD) {
+      RTC.adjust(UPLOAD);
+    }
+
+    EEPROM.get(T_ADDR, target);
+    currdt = RTC.now();
+
+    Serial.println(dt2string(target) + " T");
+    Serial.println(dt2string(UPLOAD) + " C");
+    Serial.println(dt2string(currdt) + " N");
+    Serial.setTimeout(0);
+
+    EEPROM.get(L_ADDR, L_base);
+
+    pinMode(B_PIN, INPUT_PULLUP);
+
+    update();
   }
-
-  EEPROM.get(T_ADDR, target);
-  currdt = RTC.now();
-
-  Serial.println(dt2string(target) + " T");
-  Serial.println(dt2string(UPLOAD) + " C");
-  Serial.println(dt2string(currdt) + " N");
-  Serial.setTimeout(0);
-
-  EEPROM.get(L_ADDR, L_base);
-
-  update();
+  else {
+    S7.show("0.00");
+    for (;;) {
+      serialEvent();
+      delay(100);
+    }
+  }
 }
 
 void loop() {
@@ -63,12 +73,39 @@ void loop() {
     Serial.println(dt2string(currdt) + " N");
   }
 
+  ++ms %= 10;
+  delay(100);
+}
+
+void readStr() {
+  char ch;
+
   while (Serial.available()) {
-    switch (Serial.read()) {
+    ch = Serial.read();
+
+    if (ch != '\n' && ch != '\r') {
+      str[ndx] = ch;
+      ndx++;
+    }
+    else {
+      str[ndx] = '\0';
+      ndx = 0;
+      return;
+    }
+  }
+}
+
+void serialEvent() {
+  while (Serial.available()) {
+    ctrl = Serial.read();
+    switch (ctrl) {
       case 'R':
         RTC.begin();
-        pinMode(R_PIN, OUTPUT);
-        digitalWrite(R_PIN, LOW);
+        suicide();
+        break;
+
+      case 'C':
+        Serial.println(dt2string(UPLOAD) + " C");
         break;
 
       case 'T':
@@ -102,10 +139,7 @@ void loop() {
         S7.show(str);
         i += millis();
         while (millis() < i) {
-          if (Serial.available() && Serial.read() == 'R') {
-            pinMode(R_PIN, OUTPUT);
-            digitalWrite(R_PIN, LOW);
-          }
+          serialEvent();
         }
         update();
         break;
@@ -119,36 +153,41 @@ void loop() {
         Serial.println(L_base);
         break;
 
-    }
-  }
+      case 'F':
+        EEPROM.write(Y_ADDR, 0xFF);
+        suicide();
+        break;
 
-  ++ms %= 10;
-  delay(100);
-}
-
-void readStr() {
-  static byte ndx = 0;
-  char ch;
-
-  while (Serial.available()) {
-    ch = Serial.read();
-
-    if (ch != '\n' && ch != '\r') {
-      str[ndx] = ch;
-      ndx++;
-    }
-    else {
-      str[ndx] = '\0';
-	  ndx = 0;
-      return;
+      default:
+        if (!isControl(ctrl)) {
+          if (EEPROM.read(Y_ADDR)) {
+            snprintf_P(str, 25, PSTR("There are %f days left"), days);
+            Serial.println(str);
+          }
+          else {
+            Serial.println(F("The fight has started and we will win!"));
+          }
+        }
+        break;
     }
   }
 }
 
 void update() {
-  days = (((target - currdt).totalseconds() + .1 * ms) / 86400);
-
+  if (currdt <= target) {
+    days = ((target - currdt).totalseconds() + .1 * ms) / 86400;
+  }
+  else {
+    EEPROM.write(Y_ADDR, 0);
+    suicide();
+  }
   state = false;
+}
+
+void suicide() {
+  delay(100);
+  pinMode(R_PIN, OUTPUT);
+  digitalWrite(R_PIN, LOW);
 }
 
 bool getState() {
@@ -156,9 +195,7 @@ bool getState() {
 }
 
 String dt2string(DateTime dt) {
-  char dtstr[20];
-
-  snprintf_P(dtstr, 20, PSTR("%04u/%02u/%02u %02u:%02u:%02u"),
+  snprintf_P(str, 20, PSTR("%04u/%02u/%02u %02u:%02u:%02u"),
              dt.year(), dt.month(), dt.day(), dt.hour(), dt.minute(), dt.second());
-  return dtstr;
+  return str;
 }
