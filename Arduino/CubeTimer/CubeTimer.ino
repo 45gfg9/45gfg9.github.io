@@ -291,7 +291,7 @@ void resetAllRec() {
     EEPROM.put(16 * (bestRec.level - 2), bestRec);
   }
 
-  LCD.setCursor(0,1);
+  LCD.setCursor(0, 1);
   LCD.print("All Reset!");
 }
 
