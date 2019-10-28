@@ -5,8 +5,8 @@ $.ajax({
     url:"/couserStudyHistory/ajax/playertimes",
     data:{
         "kpointId":"256",
-        "courseId":"119",
-        "playedTime":"2325"
+        "courseId":courseId,
+        "playedTime":kpointLength.toString()
     },
     type:"post",
     dataType:"text",
