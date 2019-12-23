@@ -1,52 +1,52 @@
 <!DOCTYPE HTML>
 <html>
-	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-	<script>
-		function encode() {
-			var in_s = $("#in").val();
-			if (in_s == '')
-				return;
-			$("#out").val('');
-			for (var i = 0; i < $("#in").val().length; i++)
-				$("#out").val($("#out").val() + '&#' + in_s.charCodeAt(i) + ';');
-		}
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script>
+        function encode() {
+            var in_s = $("#in").val();
+            if (in_s == '')
+                return;
+            $("#out").val('');
+            for (var i = 0; i < $("#in").val().length; i++)
+                $("#out").val($("#out").val() + '&#' + in_s.charCodeAt(i) + ';');
+        }
 
-		function decode() {
-			var code = $("#out").val().match(/&#(\d+);/g);
-			if (code == null)
-				return; 
-			$("#in").val('');
-			for (var i = 0; i < code.length; i++)
-				$("#in").val($("#in").val() + String.fromCharCode(code[i].replace(/[&#;]/g, '')));
-		}
-	</script>
-	<style>
-		body {
-			text-align: center;
-			background-color: gray;
-			color: white;
-			font-size: 3rem;
-		}
+        function decode() {
+            var code = $("#out").val().match(/&#(\d+);/g);
+            if (code == null)
+                return; 
+            $("#in").val('');
+            for (var i = 0; i < code.length; i++)
+                $("#in").val($("#in").val() + String.fromCharCode(code[i].replace(/[&#;]/g, '')));
+        }
+    </script>
+    <style>
+        body {
+            text-align: center;
+            background-color: gray;
+            color: white;
+            font-size: 3rem;
+        }
 
-		textarea {
-			font-size: 1rem;
-		}
-		
-		input {
-			font-size: 2rem;
-		}
-	</style>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-		<title>Coder</title>
-	</head>
+        textarea {
+            font-size: 1rem;
+        }
+        
+        input {
+            font-size: 2rem;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>Coder</title>
+    </head>
 
-	<body>
-		<textarea rows="10" cols="50" id="in"></textarea><br>
-		<input type="button" value="Encode" onClick="encode()">
-		<hr>
-		<textarea rows="10" cols="50" id="out"></textarea><br>
-		<input type="button" value="Decode" onClick="decode()">
-	</body>
+    <body>
+        <textarea rows="10" cols="50" id="in"></textarea><br>
+        <input type="button" value="Encode" onClick="encode()">
+        <hr>
+        <textarea rows="10" cols="50" id="out"></textarea><br>
+        <input type="button" value="Decode" onClick="decode()">
+    </body>
 </html>

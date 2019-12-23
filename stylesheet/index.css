@@ -1,21 +1,21 @@
 #theseconddivinthispage {
-	color: gold;
-	background-color: black;
-	font-size: 2rem;
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+    color: gold;
+    background-color: black;
+    font-size: 2rem;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 #fakeform {
-	background-color: lightblue;
-	color: darkred;
+    background-color: lightblue;
+    color: darkred;
 }
 #namediv {
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	font-size: 3rem;
-	color: magenta;
-	background-color: azure;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    font-size: 3rem;
+    color: magenta;
+    background-color: azure;
 }
 #marrr {
-	background-color: blue;
-	color: white;
-	font-size: 1.5rem;
+    background-color: blue;
+    color: white;
+    font-size: 1.5rem;
 }

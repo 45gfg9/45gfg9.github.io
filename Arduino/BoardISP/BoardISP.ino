@@ -21,7 +21,7 @@
 #define LED_PMODE 7
 
 // Configure the baud rate:
-#define BAUDRATE	115200
+#define BAUDRATE 115200
 
 #define HWVER 2
 #define SWMAJ 1
