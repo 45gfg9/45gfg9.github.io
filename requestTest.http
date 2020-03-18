@@ -1,0 +1,6 @@
+GET http://192.168.1.6/untitled.sql
+#Accept: application/json
+User-Agent: curl/3.2.0
+
+
+###

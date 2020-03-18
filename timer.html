@@ -2,26 +2,25 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <body align="center" style="background-color: lightblue">
-    <pre id="t" style="font-size: 300px; color: gray; font-family: Consolas, monospaced">--</pre><hr>
+    <pre id="t" style="font-size: 300px; color: gray; font-family: Consolas, monospace">--</pre><hr>
     <button id="b" style="font-size: 50px">开始</button>
     <button id="s" style="font-size: 50px">停止</button>
 </body>
 
 <script>
-    var os = 90;
-    var sec;
-    var id;
+    const os = 90;
+    let sec;
+    let id;
     $('#b').on('click', function() {
         sec = os;
-        $('#t').css('color', 'blue');
+        $('#t').css('color', 'blue').text(sec);
 
-        $('#t').text(sec);
         id = setInterval(function() {
             $('#t').text(--sec);
-            if(sec==os/6) {
+            if(sec === os/6) {
                 $('#t').css('color', 'red');
             }
-            if(sec==0) {
+            if(sec === 0) {
                 $('#s').click();
             }
         }, 1000);

@@ -6,7 +6,7 @@ var sid = setInterval(function(){
             type: 'post',
             dataType: 'json',
             data: {
-                "account": "liyingqi9659",
+                "account": "Replace this",
                 "password": "123456",
                 "ipForget": true,
             },

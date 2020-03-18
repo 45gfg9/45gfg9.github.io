@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<html lang="en">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         function encode() {
             var in_s = $("#in").val();
-            if (in_s == '')
+            if (in_s === '')
                 return;
             $("#out").val('');
             for (var i = 0; i < $("#in").val().length; i++)
@@ -43,10 +43,10 @@
     </head>
 
     <body>
-        <textarea rows="10" cols="50" id="in"></textarea><br>
+        <label for="in">Encode</label><textarea rows="10" cols="50" id="in"></textarea><br>
         <input type="button" value="Encode" onClick="encode()">
         <hr>
-        <textarea rows="10" cols="50" id="out"></textarea><br>
+        <label for="out">Decode</label><textarea rows="10" cols="50" id="out"></textarea><br>
         <input type="button" value="Decode" onClick="decode()">
     </body>
 </html>
