@@ -1,9 +1,9 @@
 // The site is moved to www.626-class.com
 
 // --- This is used on study.626-class.com
-let kpid2020 = "270";
-let cid2020 = "120";
-let ptm2020 = "2334";
+let kpid2020 = "242";
+let cid2020 = "121";
+let ptm2020 = "2103";
 $.ajax({
     url:"/couserStudyHistory/ajax/playertimes",
     data:{
@@ -19,13 +19,13 @@ $.ajax({
 });
 
 // --- This is used on exam.626-class.com
-let qid2020 = "873,863,859,856,853,847,846,842,841,838,829,521,494,490,465,455,435,422,408,405,";
-let oc2020 = "B,D,A,D,C,C,B,B,C,A,C,A,B,A,D,A,D,A,D,A,";
+let qid2020 = "419,862,484,456,852,415,875,435,870,464,829,863,837,445,523,474,468,498,424,518,";
+let oc2020 = "D,D,B,D,C,D,B,D,B,C,C,D,C,B,A,A,D,A,A,B,";
 $.ajax({
     type:"POST",
     dataType:"json",
     async:false,
-    url:"https://exam.626-class.com/front/ajax/addPaperRecord",
+    url:"/front/ajax/addPaperRecord",
     data:{
         "objectType": 'termExam',
         "objectId": $("#kpointId").val(),
@@ -46,4 +46,4 @@ for(let i = 0; i < 100; i++) {
     let j = 40000+Math.floor(Math.random()*7000);
     setTimeout(() => $.get('https://manage.626-class.com/resourceService/viewResource/'+uid+'/'+j), 200*i);
 }
-console.log('wait for 10s...');
+console.log('wait for 30s...');
